@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <BtcConvert></BtcConvert>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import BtcConvert from "./components/BtcConvert.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    BtcConvert
   }
 };
 </script>
