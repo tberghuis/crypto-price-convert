@@ -10,11 +10,13 @@
       <input v-model="btc" />
       <button @click="convertToUsdt">convert</button>
     </div>
+    <Eth></Eth>
   </div>
 </template>
 
 <script>
 import { convertToBtc } from "../services/convert.js";
+import Eth from "./Eth.vue";
 
 export default {
   name: "BtcConvert",
@@ -26,6 +28,9 @@ export default {
       console.log("usd", this.usdt);
       convertToBtc(this.usdt);
     }
+  },
+  components: {
+    Eth
   }
 };
 </script>
