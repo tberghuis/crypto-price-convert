@@ -6,13 +6,13 @@ export const tradingPairPrice = {
 
 export async function fetchTradingPairPrices() {
   const res = await axios.get("https://api.binance.com/api/v3/ticker/price");
-  console.log("fetchTradingPairPrices -> res", res);
+  // console.log("fetchTradingPairPrices -> res", res);
 
   res.data.forEach((o) => {
     tradingPairPrice[o.symbol] = o.price;
   });
 
-  console.log("tradingPairPrice", tradingPairPrice);
+  // console.log("tradingPairPrice", tradingPairPrice);
 
   return res;
 }

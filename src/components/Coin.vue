@@ -9,33 +9,10 @@
 <script>
 import { nextConvertCoinEvent } from "../subjects/convertCoinEvent.js";
 import { btcValueSubject } from "../subjects/btcValue.js";
-import { tradingPairPrice } from "../data/tradingPairPrice.js";
+import { convertFromBtcValue } from "../services/convert.js";
 import { ref, reactive } from "vue";
 
-// dont update if current coint is self
 let currentCoinSymbolConverting = "TODO";
-
-function convertFromBtcValue(btcValue, coinSymbol) {
-  if (coinSymbol === "BTC") {
-    return btcValue;
-  }
-
-  if (coinSymbol === "USDT") {
-    return btcValue * tradingPairPrice.BTCUSDT;
-  }
-
-  if (tradingPairPrice[`${coinSymbol}BTC`]) {
-    return btcValue / tradingPairPrice[`${coinSymbol}BTC`];
-  }
-
-  // will i ever need this?
-  if (tradingPairPrice[`${coinSymbol}USDT`]) {
-    let usdt = btcValue * tradingPairPrice.BTCUSDT;
-    return usdt / tradingPairPrice[`${coinSymbol}USDT`];
-  }
-
-  return 'ERROR';
-}
 
 export default {
   props: {
@@ -45,12 +22,14 @@ export default {
     const coinValue = ref(0);
 
     btcValueSubject.subscribe(btcValue => {
-      console.log("changed");
+      // dont update if current coint is self
+      if (currentCoinSymbolConverting === coinSymbol) {
+        return;
+      }
       coinValue.value = convertFromBtcValue(btcValue, coinSymbol);
     });
 
     const convert = async () => {
-      console.log("convert");
       currentCoinSymbolConverting = coinSymbol;
       await nextConvertCoinEvent(coinSymbol, coinValue.value);
     };
