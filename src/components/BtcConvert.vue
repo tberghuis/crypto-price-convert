@@ -11,12 +11,14 @@
       <button @click="convertToUsdt">convert</button>
     </div>
     <Eth></Eth>
+    <Coin coinSymbol="LTC"></Coin>
   </div>
 </template>
 
 <script>
 import { convertToBtc } from "../services/convert.js";
 import Eth from "./Eth.vue";
+import Coin from "./Coin.vue";
 
 export default {
   name: "BtcConvert",
@@ -30,7 +32,7 @@ export default {
     }
   },
   components: {
-    Eth
+    Eth, Coin
   }
 };
 </script>
