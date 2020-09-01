@@ -1,18 +1,9 @@
 <template>
   <div>
-    <div>
-      USD
-      <input v-model="usdt" />
-      <button @click="convertToBtc">convert</button>
-    </div>
-    <div>
-      BTC
-      <input v-model="btc" />
-      <button @click="convertToUsdt">convert</button>
-    </div>
-    <Eth></Eth>
     <Coin coinSymbol="LTC"></Coin>
     <Coin coinSymbol="ETH"></Coin>
+    <Coin coinSymbol="USDT"></Coin>
+    <Coin coinSymbol="BTC"></Coin>
   </div>
 </template>
 
