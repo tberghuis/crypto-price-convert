@@ -1,25 +1,14 @@
 <template>
   <div>
-    coin {{ coinValue }} {{ coinSymbol }}
+    {{ coinSymbol }}
+    <input v-model="coinValue" />
     <button @click="convert">convert</button>
   </div>
 </template>
 
 <script>
-// import {
-//   btcValueSubject,
-//   convertCoinValueToBtcValue
-// } from "../subjects/btcValue.js";
-// import {
-//   tradingPairPrice,
-//   fetchTradingPairPrices
-// } from "../data/tradingPairPrice.js";
-
 import { nextConvertCoinEvent } from "../subjects/convertCoinEvent.js";
-
 import { ref, reactive } from "vue";
-
-// type of coin passed in by prop
 
 // dont update if current coint is self
 let currentCoinSymbolConverting = "TODO";

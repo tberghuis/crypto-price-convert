@@ -12,6 +12,7 @@
     </div>
     <Eth></Eth>
     <Coin coinSymbol="LTC"></Coin>
+    <Coin coinSymbol="ETH"></Coin>
   </div>
 </template>
 
