@@ -1,3 +1,3 @@
 # crypto-convert
 
-https://tberghuis.github.io/crypto-price-convert
+https://tberghuis.github.io/crypto-price-convert/
