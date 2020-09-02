@@ -4,6 +4,7 @@
     <Coin coinSymbol="ETH"></Coin>
     <Coin coinSymbol="USDT"></Coin>
     <Coin coinSymbol="BTC"></Coin>
+    <Coin coinSymbol="BZRX"></Coin>
   </div>
 </template>
 
