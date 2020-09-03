@@ -1,10 +1,10 @@
 // TODO use this file
 
-const cryptoAssetSymbols = {
-  BTC: "BTC",
-  ETH: "ETH",
-  LTC: "LTC",
-};
+// const cryptoAssetSymbols = {
+//   BTC: "BTC",
+//   ETH: "ETH",
+//   LTC: "LTC",
+// };
 
 const coinNames = {
   ADA: "Cardano",
@@ -236,4 +236,4 @@ const coinNames = {
 //   USD:'USD' ...
 // };
 
-export { cryptoAssetSymbols };
+export { coinNames };
