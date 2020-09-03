@@ -12,7 +12,7 @@ import { btcValueSubject } from "../subjects/btcValue.js";
 import { convertFromBtcValue } from "../services/convert.js";
 import { ref, reactive } from "vue";
 
-let currentCoinSymbolConverting = "TODO";
+// let currentCoinSymbolConverting = "TODO";
 
 export default {
   props: {
@@ -23,14 +23,15 @@ export default {
 
     btcValueSubject.subscribe(btcValue => {
       // dont update if current coint is self
-      if (currentCoinSymbolConverting === coinSymbol) {
-        return;
-      }
+      // doesn't work if same coin added twice
+      // if (currentCoinSymbolConverting === coinSymbol) {
+      //   return;
+      // }
       coinValue.value = convertFromBtcValue(btcValue, coinSymbol);
     });
 
     const convert = async () => {
-      currentCoinSymbolConverting = coinSymbol;
+      // currentCoinSymbolConverting = coinSymbol;
       await nextConvertCoinEvent(coinSymbol, coinValue.value);
     };
 

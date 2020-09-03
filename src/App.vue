@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <ArrayTest></ArrayTest>
-    <BtcConvert></BtcConvert>
+    <CoinList></CoinList>
   </div>
 </template>
 
 <script>
-import BtcConvert from "./components/BtcConvert.vue";
-import ArrayTest from "./components/ArrayTest.vue";
+import CoinList from "./components/CoinList.vue";
 
 export default {
   name: "App",
   components: {
-    BtcConvert,
-    ArrayTest
+    CoinList
   }
 };
 </script>
