@@ -1,12 +1,11 @@
 <template>
   <div>
+    <AddCoin :addCoin="addCoin"></AddCoin>
+    <hr />
     <div>coin list</div>
     <div v-for="coin in coinList" :key="coin">
       <Coin :coinSymbol="coin"></Coin>
     </div>
-
-    <hr />
-    <AddCoin :addCoin="addCoin"></AddCoin>
   </div>
 </template>
 
