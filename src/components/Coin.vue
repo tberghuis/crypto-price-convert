@@ -1,7 +1,7 @@
 <template>
   <div>
     {{ coinSymbol }}
-    <input v-model="coinValue" />
+    <input @keyup.enter="convert" v-model="coinValue" />
     <button @click="convert">convert</button>
   </div>
 </template>
