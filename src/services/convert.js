@@ -20,5 +20,10 @@ export function convertFromBtcValue(btcValue, coinSymbol) {
     return usdt / tradingPairPrice[`${coinSymbol}USDT`];
   }
 
+  // remove???
+  // if (tradingPairPrice[`BTC${coinSymbol}`]) {
+  //   return btcValue / tradingPairPrice[`BTC${coinSymbol}`];
+  // }
+
   return 'ERROR';
 }

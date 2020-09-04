@@ -13,11 +13,13 @@ convertCoinEventSubject.subscribe((coin) => {
   } else if (tradingPairPrice[`${coin.coinSymbol}BTC`]) {
     btcValue = coin.coinValue * tradingPairPrice[`${coin.coinSymbol}BTC`];
   } else if (tradingPairPrice[`${coin.coinSymbol}USDT`]) {
-    // todo
-    // let usdt =
+    let usdt = coin.coinValue * tradingPairPrice[`${coin.coinSymbol}USDT`];
+    // console.log("usdt", usdt);
+    btcValue = usdt / tradingPairPrice.BTCUSDT;
   }
+  // todo add tradingPairPrice[`BTC${coin.coinSymbol}`]
 
-  console.log("btcValue", btcValue);
+  // console.log("btcValue", btcValue);
 
   btcValueSubject.next(btcValue);
 });
