@@ -1,7 +1,7 @@
 <template>
   <!-- todo search all coin symbols and names dropdown config.js -->
   <div>add coin</div>
-  <input @keyup.enter="_addCoin" v-model="addCoinInput" />
+  <input @focus="$event.target.select()" @keyup.enter="_addCoin" v-model="addCoinInput" />
   <button @click="_addCoin">add</button>
 </template>
 

@@ -16,7 +16,7 @@ import AddCoin from "./AddCoin.vue";
 
 export default {
   setup() {
-    const coinList = ref(["USDT", "BTC", "ETH", "LTC"]);
+    const coinList = ref(["USDT", "AUD", "BTC", "ETH", "LTC"]);
 
     const addCoin = coin => {
       coinList.value.push(coin);
